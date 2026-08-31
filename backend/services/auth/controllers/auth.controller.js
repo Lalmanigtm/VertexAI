@@ -5,7 +5,7 @@ export const Login = async (req, res) => {
   
   try{
    const token = req.body;
-   const decoded = getAuth(app).verifyIdToken(token);
+   const decoded = await getAuth(app).verifyIdToken(token);
    console.log(decoded);
    return res.json({decoded})
   }catch(err){
