@@ -1,11 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import {getAuth,GoogleAuthProvider} from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBxOQ3G-wiw3Gs4VztqP_I48xdpGH3AUpo",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "vertexai-b8862.firebaseapp.com",
   projectId: "vertexai-b8862",
   storageBucket: "vertexai-b8862.firebasestorage.app",
@@ -15,3 +16,5 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const googleProvider = new GoogleAuthProvider();
